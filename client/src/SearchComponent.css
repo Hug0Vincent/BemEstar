@@ -1,0 +1,31 @@
+
+  button {
+
+    border-radius: 3px;
+    background: transparent;
+    color: palevioletred;
+    border-top: 2px solid palevioletred;
+    border-right: 2px solid palevioletred;
+    border-bottom: 2px solid palevioletred;
+    border-left: none;
+    height: 60px;
+    padding: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+  }
+
+  button:hover {
+
+
+    color: white;
+    background:palevioletred
+
+
+  }
+
+  .searchbar {
+    padding: 20px;
+
+  }

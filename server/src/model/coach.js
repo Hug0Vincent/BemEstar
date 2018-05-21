@@ -14,7 +14,8 @@ var CoachSchema   = new Schema({
     	ref: 'Comments' 
     }],
     certified: Boolean,
-    qualification: [String]
+    qualification: [String],
+    description:String
     
 
 });

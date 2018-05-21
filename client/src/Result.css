@@ -1,0 +1,22 @@
+header {
+
+    background: linear-gradient(to right, #0ad3bc , rgb(15, 122, 194));
+    
+}
+
+.seeMore button {
+    height: 30px;
+    text-align: center;
+}
+
+.avatar {
+    vertical-align: middle;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    
+}
+
+.center {
+    text-align: center;
+}
