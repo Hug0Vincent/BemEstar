@@ -4,6 +4,7 @@ const path = require('path');
 var bodyParser = require('body-parser');
 
 
+
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
@@ -23,7 +24,7 @@ app.use('/api/comment',comment);
 
 
 app.get('/api',(req, res) => {
-    res.send({message:"API is running"})
+    res.sendFile(path.join(__dirname,'api.json'));
   });
 
 
