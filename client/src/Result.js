@@ -19,9 +19,17 @@ import SearchComponent from './SearchComponent'
 import Service from './service/Service'
 
 class Results extends Component {
-  state = {
-    coaches: []
-  };
+
+
+
+  constructor() {
+    super();
+    this.state = {
+        coaches: []
+      };
+    this.getProfile = this.getProfile.bind(this);
+    
+}
 
 
 
@@ -32,6 +40,17 @@ class Results extends Component {
     .then( response => {this.setState({coaches:response})})
     .catch(err => console.log(err));
   }
+
+
+  getProfile(id){
+
+
+    Service.getCoach(id)
+    .then( response => {console.log(response)})
+    .catch(err => console.log(err));
+
+
+  }
   
 
 
@@ -40,10 +59,6 @@ class Results extends Component {
   render() {
 
     let header = <div><SearchComponent/></div>;
-
-    let footer_card = <span>
-                        <Button label="See more" icon="fa-chevron-circle-down"/>
-                     </span>;
 
     var Coaches = this.state.coaches.map(function(coach, key){
         return(
@@ -56,7 +71,7 @@ class Results extends Component {
                             <img src={avatar} alt="Avatar" className="avatar img-responsive"/>
                         </div>
                         <div className="ui-g-12 ">
-                            {footer_card}
+                            <Button label="See more" icon="fa-chevron-circle-down" onClick={e => this.getProfile(coach._id)} />
                         </div>
                         <div className="ui-g-12 ">
                             <Rating value={coach.note/4} readonly={true} stars={5} cancel={false} />
@@ -80,7 +95,7 @@ class Results extends Component {
             </div>
         </li>
         )
-    });
+    },this);
 
     if(this.state.coaches.length == 0){
 

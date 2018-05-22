@@ -4,6 +4,11 @@ const servicos = {
         .then(r => analisaStatusCode(r))
         .then(r => r.json())
     ,
+    getCoach: (id) =>
+    fetch('/api/coach/'+id)
+      .then(r => analisaStatusCode(r))
+      .then(r => r.json())
+  ,
     test: () =>
       fetch('/api')
         .then(r => analisaStatusCode(r))
