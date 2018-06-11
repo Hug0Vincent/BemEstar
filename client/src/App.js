@@ -4,6 +4,7 @@ import './App.css';
 
 import Search from './SearchCoach';
 import Results from './Result';
+import Coach from './Coach';
 
 import 'primereact/resources/primereact.min.css'
 import 'primereact/resources/themes/omega/theme.css'
@@ -19,6 +20,7 @@ class App extends Component {
              <Switch>
                 <Route exact path='/' component={Search} />
                 <Route exact path='/in/:qualif' component={Results} />
+                <Route exact path='/coach/:id' component={Coach} />
                 <Route path="*" render={() => (<Redirect to="/" />)} />
              </Switch>
        </Router>

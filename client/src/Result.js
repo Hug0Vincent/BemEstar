@@ -44,17 +44,11 @@ class Results extends Component {
 
   getProfile(id){
 
-
-    Service.getCoach(id)
-    .then( response => {console.log(response)})
-    .catch(err => console.log(err));
+    let redirect = '/coach/'+id
+    window.location.href=redirect;
 
 
   }
-  
-
-
-
 
   render() {
 
@@ -86,7 +80,7 @@ class Results extends Component {
                             <p><b>Cellphone</b> : {coach.cellphone}</p>
                         </div>
                         <div className="ui-g-12">
-                            <p><b>Description</b> : {coach.description}</p>
+                            <p><b>Description</b> : {coach.shortdescription}</p>
                         </div>
                     </div>
                 </div>

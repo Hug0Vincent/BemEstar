@@ -9,13 +9,16 @@ var CoachSchema   = new Schema({
     mail: String,
     cellphone: String,
     note: Number,
-    comments: [{ 
-    	type: mongoose.Schema.Types.ObjectId, 
-    	ref: 'Comments' 
-    }],
     certified: Boolean,
     qualification: [String],
-    description:String
+    shortdescription: String,
+    longdescription: String,
+    withme: String,
+    comments: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Comments'
+    }],
+    website:String
     
 
 });
