@@ -20,7 +20,7 @@ app.use('/api/coach', coach);
 app.use('/api/comment', comment);
 
 app.get('/api', function (req, res) {
-    res.send({ message: "API is running" });
+    res.sendFile(path.join(__dirname, 'api.json'));
 });
 
 app.get('*', function (req, res) {
