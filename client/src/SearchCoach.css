@@ -41,6 +41,25 @@
       margin-right: auto;
   }
 
+  .suggestion, button{
+
+    background: transparent;
+    border-radius: 30px;
+    background: transparent;
+    color: palevioletred;
+    border-top: 2px solid palevioletred;
+    border-right: 2px solid palevioletred;
+    border-bottom: 2px solid palevioletred;
+    border-left: 2px solid palevioletred;
+    height: 60px;
+    width: 200px;
+    padding: 20px;
+    -webkit-transition-duration: 0.4s; /* Safari */
+    transition-duration: 0.4s;
+    cursor: pointer;
+
+  }
+
 
 
 

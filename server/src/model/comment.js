@@ -9,10 +9,10 @@ var CommentSchema   = new Schema({
     mail: String,
     note: Number,
     comments: String,
-    coachs: [{ 
+    coach: { 
     	type: mongoose.Schema.Types.ObjectId, 
     	ref: 'Coach' 
-    }]
+    }
     
 
 });
