@@ -17,8 +17,12 @@
                 "cellphone": "+string",
                 "note": "number",
                 "Certified": "bool",
-                "qualification": ["string"],
-                "description": "string"
+                "qualification": "[string]",
+                "shortdescription": "string",
+                "withme": "string",
+                "longdescription": "string",
+                "website": "string"
+                
                 
             }
 
@@ -29,7 +33,10 @@
                 "lastname": "String",
                 "mail": "string",
                 "note": "number",
-                "comments": "string"
+                "comments": "string",
+                "coach": {
+                    "_id":"coachID"
+                }
             }
         }
     },
