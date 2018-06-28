@@ -35,8 +35,24 @@ const servicos = {
       return promResposta
         .then(r => analisaStatusCode(r))
         .then(r => r.json())
+    },
+    getUserById: (id) =>
+      fetch('http://localhost:3000/coachee/'+id)
+        .then(r => analisaStatusCode(r))
+        .then(r => r.json())
+    ,
+    postComment: (comment) => {
+      const promResposta =
+        fetch('api/comment/add_comment', {
+          method: 'post',
+          headers: {'Content-Type':'application/json'},
+          body: JSON.stringify(comment)
+        })
+        return promResposta
+        .then(r => analisaStatusCode(r))
+        .then(r => r.json())
     }
-
+  
   }
   
   function analisaStatusCode(resposta) {
