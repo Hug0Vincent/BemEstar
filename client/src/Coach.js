@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './Coach.css';
+import Comment from './comment.js'
 
 import {Card} from 'primereact/components/card/Card';
 import {Button} from 'primereact/components/button/Button';
@@ -8,6 +9,8 @@ import {Rating} from 'primereact/components/rating/Rating'
 import avatar from './img_avatar.png';
 
 import SearchComponent from './SearchComponent'
+
+
 
 
 import {InputText} from 'primereact/components/inputtext/InputText';
@@ -28,7 +31,17 @@ class Coach extends Component {
             coache: '',
             comments:[]
         };
-        this.getProfile = this.getProfile.bind(this);     
+        this.getProfile = this.getProfile.bind(this);
+        this.onAddComment = this.onAddComment.bind(this);     
+    }
+
+    onAddComment(e){
+
+        Service.searchCommentsByCoachId(this.props.match.params.id)
+        .then( response => {this.setState({comments:response})})
+        .catch(err => console.log(err));
+        
+
     }
 
     componentDidMount() {
@@ -51,6 +64,8 @@ class Coach extends Component {
         
     
     }
+
+
 
 
   render() {
@@ -155,6 +170,16 @@ class Coach extends Component {
             {comments}
 
         </div>
+
+            <h1 style={{margin:"5%"}}> Add a comment : </h1>
+
+                <div className="add_comment">
+
+                    
+                    <div className = "center">
+                        <Comment id={this.props.match.params.id} onClick={this.onAddComment}/>
+                    </div>
+                </div>
 
 
     
