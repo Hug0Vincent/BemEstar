@@ -43,7 +43,7 @@ const servicos = {
     ,
     postComment: (comment) => {
       const promResposta =
-        fetch('api/comment/add_comment', {
+        fetch('http://localhost:5300/api/comment/add_comment', {
           method: 'post',
           headers: {'Content-Type':'application/json'},
           body: JSON.stringify(comment)
